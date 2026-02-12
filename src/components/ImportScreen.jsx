@@ -2,11 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 import { useGame } from '../context/GameContext';
 import { SAMPLE_GAMES } from '../utils/constants';
 import { getGames, deleteGame } from '../utils/storage';
+import { importPgnFromChessComUrl } from '../utils/gameImport';
 
 export default function ImportScreen() {
   const { loadGame, dispatch } = useGame();
   const [pgn, setPgn] = useState('');
+  const [gameUrl, setGameUrl] = useState('');
   const [error, setError] = useState('');
+  const [urlImporting, setUrlImporting] = useState(false);
   const [pastGames, setPastGames] = useState([]);
   const fileRef = useRef(null);
 
@@ -26,6 +29,25 @@ export default function ImportScreen() {
       setError('');
     } catch (e) {
       setError(e.message);
+    }
+  };
+
+  const handleImportFromUrl = async () => {
+    if (!gameUrl.trim()) {
+      setError('Please paste a Chess.com game link.');
+      return;
+    }
+
+    setUrlImporting(true);
+    setError('');
+    try {
+      const importedPgn = await importPgnFromChessComUrl(gameUrl.trim());
+      setPgn(importedPgn);
+      loadGame(importedPgn);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setUrlImporting(false);
     }
   };
 
@@ -81,6 +103,26 @@ export default function ImportScreen() {
       <p>Import a game and develop deeper chess understanding through guided self-reflection.</p>
 
       <div className="import-box">
+        <h3>Import from Chess.com link</h3>
+        <input
+          className="game-url-input"
+          type="url"
+          value={gameUrl}
+          onChange={(e) => { setGameUrl(e.target.value); setError(''); }}
+          placeholder="https://www.chess.com/game/live/123456789"
+        />
+        <div className="import-actions">
+          <button
+            className="import-btn import-btn-secondary"
+            onClick={handleImportFromUrl}
+            disabled={!gameUrl.trim() || urlImporting}
+          >
+            {urlImporting ? 'Importing...' : 'Import Link'}
+          </button>
+        </div>
+
+        <div className="import-divider">or</div>
+
         <h3>Paste PGN</h3>
         <textarea
           className="pgn-textarea"
