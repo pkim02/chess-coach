@@ -1,0 +1,114 @@
+/* Side panel compact overrides (~360px wide) */
+.app--compact .analysis-layout {
+  flex-direction: column;
+  height: auto;
+  max-width: 100%;
+}
+
+.app--compact .board-section {
+  width: 100%;
+  align-items: center;
+}
+
+.app--compact .board-and-eval {
+  justify-content: center;
+}
+
+.app--compact .right-panels {
+  min-width: unset;
+  max-width: unset;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 8px;
+  max-height: 50vh;
+}
+
+.app--compact .app-header {
+  padding: 6px 12px;
+  height: 40px;
+}
+
+.app--compact .app-logo {
+  font-size: 15px;
+}
+
+.app--compact .app-main {
+  padding: 8px;
+}
+
+.app--compact .import-screen {
+  padding: 20px 12px;
+}
+
+.app--compact .import-screen h2 {
+  font-size: 20px;
+}
+
+.app--compact .pgn-textarea {
+  height: 120px;
+  font-size: 12px;
+}
+
+.app--compact .file-upload-zone {
+  padding: 20px;
+  font-size: 13px;
+}
+
+.app--compact .summary-screen {
+  padding: 12px;
+}
+
+.app--compact .summary-header {
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.app--compact .summary-grid {
+  grid-template-columns: 1fr;
+}
+
+.app--compact .summary-card .big-number {
+  font-size: 36px;
+}
+
+/* Eval bar smaller in compact mode */
+.app--compact .eval-bar {
+  width: 24px;
+}
+
+/* Move nav compact */
+.app--compact .move-nav {
+  gap: 4px;
+}
+
+.app--compact .move-nav button {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* Phase banner compact */
+.app--compact .phase-banner {
+  padding: 8px 10px;
+}
+
+.app--compact .phase-action-btn {
+  font-size: 11px;
+  padding: 5px 10px;
+}
+
+/* Popout button */
+.popout-btn {
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+/* Loading state */
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--text-muted);
+  font-size: 14px;
+}

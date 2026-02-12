@@ -1,0 +1,105 @@
+:root {
+  --bg-primary: #312e2b;
+  --bg-secondary: #272421;
+  --bg-tertiary: #21201d;
+  --bg-card: #3a3733;
+  --bg-hover: #454240;
+  --bg-input: #1d1b19;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #bababa;
+  --text-muted: #8b8987;
+  --text-dim: #6b6966;
+
+  --board-light: #ebecd0;
+  --board-dark: #739552;
+  --board-highlight: rgba(255, 255, 0, 0.4);
+  --board-last-move: rgba(155, 199, 0, 0.41);
+
+  --accent-green: #81b64c;
+  --accent-green-hover: #95c95f;
+  --accent-blue: #5c9ae6;
+  --accent-red: #e05555;
+  --accent-orange: #e6913e;
+  --accent-yellow: #d4c84b;
+  --accent-purple: #9b72cb;
+
+  /* Move classifications - matching chess.com */
+  --brilliant: #1baca6;
+  --great: #5c8bb0;
+  --best: #96bc4b;
+  --excellent: #96bc4b;
+  --good: #96bc4b;
+  --book: #a88865;
+  --inaccuracy: #f7c631;
+  --mistake: #e58f2a;
+  --miss: #db6140;
+  --blunder: #ca3431;
+
+  --eval-white: #ffffff;
+  --eval-black: #3a3a3a;
+  --eval-draw: #888888;
+
+  --font-main: 'Montserrat', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+input, textarea, select {
+  font-family: var(--font-main);
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}

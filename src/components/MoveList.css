@@ -1,0 +1,95 @@
+.move-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.move-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.move-list-result {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.move-list-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.move-pair {
+  display: flex;
+  align-items: stretch;
+  min-height: 30px;
+}
+
+.move-pair:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.move-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  font-size: 12px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.move-cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.1s;
+  border-left: 3px solid transparent;
+  min-height: 30px;
+}
+
+.move-cell:hover {
+  background: var(--bg-hover);
+}
+
+.move-cell.active {
+  background: rgba(129, 182, 76, 0.15);
+  color: var(--accent-green);
+}
+
+.move-san {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.move-classification {
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+/* Classification colors on the left border */
+.move-cell.brilliant { border-left-color: var(--brilliant); }
+.move-cell.great { border-left-color: var(--great); }
+.move-cell.best { border-left-color: var(--best); }
+.move-cell.excellent { border-left-color: var(--excellent); }
+.move-cell.good { border-left-color: var(--good); }
+.move-cell.book { border-left-color: var(--book); }
+.move-cell.inaccuracy { border-left-color: var(--inaccuracy); }
+.move-cell.mistake { border-left-color: var(--mistake); }
+.move-cell.miss { border-left-color: var(--miss); }
+.move-cell.blunder { border-left-color: var(--blunder); }

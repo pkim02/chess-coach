@@ -1,0 +1,27 @@
+.board-wrapper {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.board-player-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 36px;
+  width: 100%;
+}
+
+.board-player-info .player-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.board-player-info.top {
+  margin-bottom: 2px;
+}
+
+.board-player-info.bottom {
+  margin-top: 2px;
+}

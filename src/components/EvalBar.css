@@ -1,0 +1,57 @@
+.eval-bar {
+  width: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--eval-black);
+  flex-shrink: 0;
+}
+
+.eval-bar-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.eval-bar-white {
+  background: var(--eval-white);
+  transition: height 0.4s ease;
+  width: 100%;
+}
+
+.eval-bar-black {
+  background: var(--eval-black);
+  transition: height 0.4s ease;
+  width: 100%;
+  flex: 1;
+}
+
+.eval-bar-label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 0;
+  letter-spacing: -0.3px;
+}
+
+.eval-bar-label.white-adv {
+  bottom: 0;
+  color: #333;
+  /* Position label at boundary */
+}
+
+.eval-bar-label.black-adv {
+  top: 0;
+  color: #ddd;
+}
+
+.eval-bar.flipped .eval-bar-inner {
+  flex-direction: column-reverse;
+}
