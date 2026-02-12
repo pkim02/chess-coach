@@ -10,7 +10,10 @@ function isChessComUrl(url) {
 }
 
 function extractGameId(url) {
-  const match = url.match(/\/game\/(?:live|daily)\/(\d+)/i);
+  // Supports both:
+  // - /game/live/{id}
+  // - /analysis/game/live/{id}/review
+  const match = url.match(/\/(?:analysis\/)?game\/(?:live|daily)\/(\d+)(?:\/|$)/i);
   return match ? match[1] : null;
 }
 
